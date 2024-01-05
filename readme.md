@@ -3,7 +3,7 @@ This project allows an artificial decision maker to reciprocate user behavior wi
 
 
 ## Theoretical Background
-The algorithm assumes an objective function ("utility") that reflects other-regarding preferences according to the reciprocity model by Charness & Rabin (2002). Let $$m$$ and $$o$$ respectively denote the payoffs of the decision maker ("mine") and the user ("other"). The decision maker's objective function $$U_m$$ can then be defined piecewise by
+The algorithm assumes an objective function ("utility") that reflects other-regarding preferences according to the reciprocity model by Charness & Rabin (2002). Let $m$ and $o$ respectively denote the payoffs of the decision maker ("mine") and the user ("other"). The decision maker's objective function $U_m$ can then be defined piecewise by
 $$U_m = a\cdot m + r\cdot (1-a)\cdot o$$   
 if   
 $$m \ge o$$
@@ -11,11 +11,11 @@ and
 $$U_m = b\cdot m + r\cdot (1-b)\cdot o$$   
 if   
 $$m < o$$
-where $$a$$, $$b$$, and $$r$$ are real numbers.
+where $a$, $b$, and $r$ are real numbers.
 
-Kerschbamer (2015) distinguishes nine preference types depending on the choice of parameters $$a$$ and $$b$$ (letting $$r = 1$$). The additional kindness parameter $$r$$ changes the AI's preferences in reaction to kind or unkind actions of the user. Specifically, $$r$$ increases (decreases) if $$m > (<) o$$.
+Kerschbamer (2015) distinguishes nine preference types depending on the choice of parameters $a$ and $b$ (letting $r = 1$). The additional kindness parameter $r$ changes the AI's preferences in reaction to kind or unkind actions of the user. Specifically, $r$ increases (decreases) if $m > (<) o$.
 
-If $$a=b=1$$, the decision maker is "selfish" so that $$U_m=m$$, independent of the user's payoff $$o$$ and kindness $$r$$. 
+If $a=b=1$, the decision maker is "selfish" so that $U_m=m$, independent of the user's payoff $o$ and kindness $r$. 
 
 
 ## Teaching the AI to be kind
@@ -26,9 +26,9 @@ There are any number of ways in which the target workload of 8 hours per period 
 The standard setup has a human agent (in the role of opponent) performing this task repeatedly with the AI until a stable agreement is reached. The AI uses Q learning to
 
 * reach an allocation whose sum equals 8 hours (coordination) and
-* adapt kindness $$r$$ in reaction to earned payoffs.
+* adapt kindness $r$ in reaction to earned payoffs.
 
-Kindness $$r$$ influences the AI's other-regarding preferences $$U_m$$ and thus the utility of each allocation of the workload. In particular, the Q values of the learning algorithm are updated by using utility as reward. Default starting parameters set $$0 < a , b < 1$$ (exact values determined randomly) and $$r=0$$. Kindness $$r$$ is updated incrementally by adding or subtracting a sensitivity parameter (set equal to 1); there is no upper or lower bound.
+Kindness $r$ influences the AI's other-regarding preferences $U_m$ and thus the utility of each allocation of the workload. In particular, the Q values of the learning algorithm are updated by using utility as reward. Default starting parameters set $0 < a , b < 1$ (exact values determined randomly) and $r=0$. Kindness $r$ is updated incrementally by adding or subtracting a sensitivity parameter (set equal to 1); there is no upper or lower bound.
 
 
 ## References
