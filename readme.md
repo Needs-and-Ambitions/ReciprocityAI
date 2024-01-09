@@ -45,7 +45,7 @@ The game ends automatically if the same allocation of hours occurs in five conse
 At any other time, you can access the "File" menu to restart the game via the "Reset" option or to "Exit" the game manually. Alternatively, the "History" menu can be used to generate plots of results from previous periods such as "Total contribution" or "Individual payoffs". The "Reward" and "Kindness" plots may offer helpful information about the AI's learning progress.
 
 ## How to contribute
-Although this project is not currently open to contributions, there are several ways in which it could be adapted or expanded:
+There are several ways in which the program could be adapted or expanded:
 * Most real-life negotiations are much more complex than the burden-sharing problem described here. It might therefore be interesting to add more features to the game, such as "cheap talk" between user and AI.
 * The current graphics are rather plain. Add some colors. Maybe replace the kindness function with a suitable range of emojis (e.g. from angry to happy).
 * Learning is more difficult if there are more actors or more possible actions, maybe too difficult for Q learning. How do more powerful learning algorithms (e.g. Deep Q Learning) handle such a task.
@@ -57,3 +57,4 @@ Although this project is not currently open to contributions, there are several 
 * `project_functions.py`: Auxiliary file (functions to plot dynamic variables)
 * `readme.md`: This file
 
+Copyright (C) 2024, Needs and Ambitions
