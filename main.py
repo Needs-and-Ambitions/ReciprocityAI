@@ -1,7 +1,20 @@
 """
-Allocation Problem
-Author: Needs and Ambitions, Date: January 2024
-Main file
+    Allocation Problem - Main file
+
+    Copyright (C) 2024, Needs and Ambitions
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>
 """
 
 # import standard modules
@@ -296,9 +309,57 @@ menubar.add_cascade(
     underline=0
 )
 
+# info menu (drop down)
+info_menu = Menu(menubar, tearoff=False)
+info_menu.add_command(
+    label='About',
+    command=lambda: info(),  # display copyright notice
+)
+menubar.add_cascade(
+    label="?",
+    menu=info_menu,
+    underline=0
+)
+
 # padding for main window
 for child in mainframe.winfo_children():
     child.grid_configure(padx=5, pady=5)
+
+## function to call about window
+def info():
+    # setup of about window
+    Window = tk.Toplevel(root)
+    Window.grab_set()
+    Window.geometry("600x200")
+    Window.title("About")
+    aboutframe = ttk.Frame(Window, padding="3 3 12 12")
+    aboutframe.grid(column=0, row=0, sticky=(N, W, E, S))
+    Window.columnconfigure(0, weight=1)
+    Window.rowconfigure(0, weight=1)
+
+    # text elements
+    ttk.Label(aboutframe, text="Allocation Game").grid(column=0, row=0, sticky=W)
+    ttk.Label(aboutframe, text="Copyright (C) 2024, Needs and Ambitions").grid(column=0, row=1, sticky=W)
+    ttk.Label(aboutframe, text="This program comes with ABSOLUTELY NO WARRANTY.").grid(column=0, row=2, sticky=W)
+    ttk.Label(
+        aboutframe,
+        text="This is free software, and you are welcome to redistribute it under certain conditions."
+    ).grid(column=0, row=3, sticky=E)
+    ttk.Label(
+        aboutframe,
+        text="For details see the GNU General Public License, Version 3 or later."
+    ).grid(column=0, row=4, sticky=W)
+
+    # button to close window
+    ttk.Button(
+        aboutframe,
+        text="OK",
+        command=lambda: Window.destroy()
+    ).grid(column=0, row=5, sticky=(W, E))
+
+    # padding for about window
+    for child in aboutframe.winfo_children():
+        child.grid_configure(padx=5, pady=5)
 
 
 ## exit window
