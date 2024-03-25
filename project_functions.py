@@ -19,33 +19,38 @@
 
 import matplotlib.pyplot as plt
 
+
 def diagram1(totpaydyn):
     plt.xlabel('Period')
     plt.ylabel('Total payoff')
     plt.plot(totpaydyn)
     plt.show()
 
-def diagram2(indpayH, indpayL):
+
+def diagram2(indpay_h, indpay_l):
     plt.xlabel('Period')
     plt.ylabel('Individual payoff')
-    plt.plot(indpayH, 'r', label="Payoff Player H")
-    plt.plot(indpayL, 'b', label="Payoff Player L")
+    plt.plot(indpay_h, 'r', label="Payoff Player H")
+    plt.plot(indpay_l, 'b', label="Payoff Player L")
     plt.legend()
     plt.show()
 
-def diagram3(indcontH, indcontL):
+
+def diagram3(indcont_h, indcont_l):
     plt.xlabel('Period')
     plt.ylabel('Individual contribution')
-    plt.plot(indcontH, 'r', label="Contribution Player H")
-    plt.plot(indcontL, 'b', label="Contribution Player L")
+    plt.plot(indcont_h, 'r', label="Contribution Player H")
+    plt.plot(indcont_l, 'b', label="Contribution Player L")
     plt.legend()
     plt.show()
+
 
 def diagram4(reward_hist):
     plt.xlabel('Period')
     plt.ylabel('Reward Player L')
     plt.plot(reward_hist)
     plt.show()
+
 
 def diagram5(kindness):
     plt.xlabel('Period')
